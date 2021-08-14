@@ -32,31 +32,3 @@ function insertBreak(label) {
     else
         label.parentNode.appendChild(breakElem);
 }
-/*
-//addCheckboxesToLabels(div);
-
-function addCheckboxesToLabels(labelList) {
-    for (var i = 1; i < labelList.length; i++) {
-        var checkbox = document.createElement("INPUT");
-        checkbox.setAttribute("type","checkbox");
-        if(labelList[i].nodeName == "LABEL") {
-            labelList[i].parentNode.insertBefore(checkbox,labelList[i]);
-            i++;
-        }
-    }
-}
-
-var div = document.getElementsByTagName("div")[0].childNodes;
-addCheckboxesToLabels(div);
-
-function addCheckboxesToLabels(labelList) {
-    for (var i = 1; i < labelList.length; i++) {
-        var checkbox = document.createElement("INPUT");
-        checkbox.setAttribute("type","checkbox");
-        if(labelList[i].nodeName == "LABEL") {
-            labelList[i].parentNode.insertBefore(checkbox,labelList[i]);
-            i++;
-        }
-    }
-}
-*/
