@@ -1,34 +1,33 @@
 createDocumentChecklists();
 
 function createDocumentChecklists() {
-    var documentDivs = document.getElementsByTagName("DIV");
-    for (var i = 0; i < documentDivs.length; i++)
-        if (documentDivs[i].className == "checklist")
-            createDivChecklist(documentDivs[i]);
+    var documentDivElems = document.getElementsByTagName("DIV");
+
+    for (var i = 0; i < documentDivElems.length; i++)
+        if (documentDivElems[i].className == "checklist")
+            createChecklist(documentDivElems[i]);
 }
 
-function createDivChecklist(div) {
-    var checklistLabels = div.getElementsByTagName("LABEL");
-    var label;
+function createChecklist(divElem) {
+    var labelElems = divElem.getElementsByTagName("LABEL");
 
-    for (var i = 0; i < checklistLabels.length; i++) {
-        label = checklistLabels[i];
-        insertCheckBox(label);
-        insertBreak(label);
+    for (var i = 0; i < labelElems.length; i++) {
+        insertCheckboxFor(labelElems[i]);
+        appendBreakTo(labelElems[i]);
     }
 }
 
-function insertCheckBox(label) {
-    var input = document.createElement("INPUT");
-    input.setAttribute("type", "checkbox");
-    label.parentNode.insertBefore(input, label); 
+function insertCheckboxFor(labelElem) {
+    var inputElem = document.createElement("INPUT");
+    inputElem.setAttribute("type", "checkbox");
+    labelElem.parentNode.insertBefore(inputElem, labelElem);
 }
 
-function insertBreak(label) {
+function appendBreakTo(labelElem) {
     var breakElem = document.createElement("BR");
 
-    if (label.nextSibling != null)
-        label.parentNode.insertBefore(breakElem, label.nextSibling);
+    if (labelElem.nextSibling != null)
+        labelElem.parentNode.insertBefore(breakElem, labelElem.nextSibling);
     else
-        label.parentNode.appendChild(breakElem);
+        labelElem.parentNode.appendChild(breakElem);
 }
