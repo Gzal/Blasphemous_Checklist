@@ -6,6 +6,8 @@ function createDocumentChecklists() {
     for (var i = 0; i < documentDivElems.length; i++)
         if (documentDivElems[i].className == "checklist")
             createChecklist(documentDivElems[i]);
+
+    loadChecklistState();
 }
 
 function createChecklist(divElem) {
@@ -30,4 +32,22 @@ function appendBreakTo(labelElem) {
         labelElem.parentNode.insertBefore(breakElem, labelElem.nextSibling);
     else
         labelElem.parentNode.appendChild(breakElem);
+}
+
+function saveChecklistState() {
+    var inputElems = document.getElementsByTagName("INPUT");
+
+    for (var i = 0; i < inputElems.length; i++)
+        if (inputElems[i].getAttribute("type") == "checkbox")
+            localStorage.setItem(i,inputElems[i].checked);
+}
+
+function loadChecklistState() {
+    var inputElems = document.getElementsByTagName("INPUT");
+
+    for (var i = 0; i < inputElems.length; i++) {
+        if (inputElems[i].getAttribute("type") == "checkbox")
+            if (localStorage.getItem(i) == "true")
+                inputElems[i].checked = true;
+    }
 }
