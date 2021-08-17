@@ -27,3 +27,5 @@ Currently, the content of the checklist covers the following areas:
 - Brotherhood of the Silent Sorrow
 - The Holy Line
 - Albero
+- Wasteland of the Buried Churches
+- Mercy Dreams
