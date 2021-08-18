@@ -11,12 +11,15 @@ function createDocumentChecklists() {
 }
 
 function createChecklist(divElem) {
-    var labelElems = divElem.getElementsByTagName("LABEL");
+    var divChildElem = divElem.firstChild;
 
-    for (var i = 0; i < labelElems.length; i++) {
-        insertCheckboxFor(labelElems[i]);
-        appendBreakTo(labelElems[i]);
-    }
+    do {
+        if(divChildElem.tagName == "LABEL") {
+            insertCheckboxFor(divChildElem);
+            appendBreakTo(divChildElem);
+        }
+        divChildElem = divChildElem.nextSibling;
+    } while (divChildElem.nextSibling != null);
 }
 
 function insertCheckboxFor(labelElem) {
