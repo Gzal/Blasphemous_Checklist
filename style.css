@@ -5,6 +5,11 @@ span.relic-icons img {
     vertical-align: middle;
 }
 
+span.missable-mark {
+    font-weight: bold;
+    color: maroon;
+}
+
 div.sub-checklist {
     margin-left: 1em;
 }
