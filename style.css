@@ -5,6 +5,10 @@ span.relic-icons img {
     vertical-align: middle;
 }
 
+div.sub-checklist {
+    margin-left: 1em;
+}
+
 div.license {
     text-align: center;
 }
