@@ -11,11 +11,14 @@ function createDocumentChecklists() {
 }
 
 function createChecklist(divElem) {
+    var itemNumber = 0;
     var divChildElem = divElem.firstChild;
 
     do {
         if(divChildElem.tagName == "LABEL") {
+            itemNumber++;
             insertCheckboxFor(divChildElem);
+            addCheckboxId(divChildElem, itemNumber);
             appendBreakTo(divChildElem);
         }
         divChildElem = divChildElem.nextSibling;
@@ -26,6 +29,12 @@ function insertCheckboxFor(labelElem) {
     var inputElem = document.createElement("INPUT");
     inputElem.setAttribute("type", "checkbox");
     labelElem.parentNode.insertBefore(inputElem, labelElem);
+}
+
+function addCheckboxId(labelElem, itemNumber) {
+    var areaName = labelElem.parentNode.id;
+    var checkboxId = areaName + "-" + itemNumber;
+    labelElem.previousSibling.id = checkboxId;
 }
 
 function appendBreakTo(labelElem) {
