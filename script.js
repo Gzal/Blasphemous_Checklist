@@ -51,7 +51,7 @@ function saveChecklistState() {
 
     for (var i = 0; i < inputElems.length; i++)
         if (inputElems[i].getAttribute("type") == "checkbox")
-            localStorage.setItem(i,inputElems[i].checked);
+            localStorage.setItem(inputElems[i].id,inputElems[i].checked);
 }
 
 function loadChecklistState() {
@@ -59,7 +59,7 @@ function loadChecklistState() {
 
     for (var i = 0; i < inputElems.length; i++) {
         if (inputElems[i].getAttribute("type") == "checkbox")
-            if (localStorage.getItem(i) == "true")
+            if (localStorage.getItem(inputElems[i].id) == "true")
                 inputElems[i].checked = true;
     }
 }
