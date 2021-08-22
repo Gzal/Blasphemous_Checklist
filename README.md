@@ -29,3 +29,4 @@ Currently, the content of the checklist covers the following areas:
 - Albero
 - Wasteland of the Buried Churches
 - Mercy Dreams
+- Desecrated Cisterns
