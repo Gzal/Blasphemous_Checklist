@@ -19,6 +19,7 @@ function createChecklist(divElem) {
             itemNumber++;
             insertCheckboxFor(divChildElem);
             addCheckboxId(divChildElem, itemNumber);
+            addForAttribute(divChildElem);
             appendBreakTo(divChildElem);
         }
         divChildElem = divChildElem.nextSibling;
@@ -35,6 +36,11 @@ function addCheckboxId(labelElem, itemNumber) {
     var areaName = labelElem.parentNode.id;
     var checkboxId = areaName + "-" + itemNumber;
     labelElem.previousSibling.id = checkboxId;
+}
+
+function addForAttribute(labelElem) {
+    var checkboxElem = labelElem.previousSibling;
+    labelElem.setAttribute("for", checkboxElem.id);
 }
 
 function appendBreakTo(labelElem) {
