@@ -16,7 +16,7 @@ The checklist is a work in progress with checklist items and features being adde
 - Oil of the Pilgrims
 ### NPCs
 - Children of Moonlight
-- Quest Characters
+- Questlines
 - Corpses
 ### Tools
 - Prie Dieus
