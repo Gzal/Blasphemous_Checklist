@@ -30,3 +30,7 @@ Currently, the content of the checklist covers the following areas:
 - Wasteland of the Buried Churches
 - Mercy Dreams
 - Desecrated Cisterns
+- Mountains of Endless Dusk
+- Jondo
+- Echoes of Salt
+- Grievance Ascends
