@@ -64,8 +64,11 @@ function loadChecklistState() {
     var inputElems = document.getElementsByTagName("INPUT");
 
     for (var i = 0; i < inputElems.length; i++) {
-        if (inputElems[i].getAttribute("type") == "checkbox")
+        if (inputElems[i].getAttribute("type") == "checkbox") {
             if (localStorage.getItem(inputElems[i].id) == "true")
                 inputElems[i].checked = true;
+            else
+                inputElems[i].checked = false;
+        }
     }
 }
